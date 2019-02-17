@@ -10,6 +10,11 @@ app.set("port", 5560);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+http.createServer(function(req,res){
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello world!');
+  }).listen(5560);
+
 app.use(function(req, res) {
     res.type("text/plain")
     if (req.method === "GET" && req.route === "/") {
@@ -36,7 +41,7 @@ app.use(function(req, res) {
 });
 
 app.listen(app.get("port"), function() {
-    console.log("Express started on" + app.get("port"));
+    console.log("Express started on " + app.get("port"));
 });
 
 
