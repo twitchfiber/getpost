@@ -11,14 +11,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-        // you just submitted a get request!
-        var arr = [];
-        for (var p in req.query) {
-            arr.push({"key": p, "val": req.query[p]})
-        }
-        var obj = {};
-        obj.args = arr;
-        res.render("get", obj);
+    // you just submitted a get request!
+    var arr = [];
+    for (var p in req.query) {
+        arr.push({"key": p, "val": req.query[p]})
+    }
+    var obj = {};
+    obj.args = arr;
+    res.render("get", obj);
 });
 
 app.post("/", function(req, res) {
