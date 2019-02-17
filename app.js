@@ -31,6 +31,11 @@ app.post("/", function(req, res) {
     res.render("post", obj);
 });
 
+app.use(function(req, req) {
+    res.status(404);
+    res.render('404');
+});
+
 app.listen(app.get("port"), function() {
     console.log("Express started on " + app.get("port"));
 });
